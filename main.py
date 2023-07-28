@@ -14,10 +14,10 @@ def home():
                 <meta charset="UTF-8">
             </head>
             <body style="display: flex; justify-content: center; align-items: center; height: 100vh; flex-direction: column;">
-                <h1>Welcome!</h1>
-                <p style="font-size: 1.5em;">Lost in the Internet? You're in the right place! 😂</p>
+                <h1> Welcome! </h1>
+                <p style="font-size: 1.5em;">Lost in the Internet? You're in the right place! &#x1F602;</p>
                 <footer style="position: fixed; bottom: 0; width: 100%; text-align: center; padding: 20px;">
-                    <p>By Andres Ariza ❤️</p>
+                    <p>By Andres Ariza &#x2764;</p>
                 </footer>
             </body>
         </html>
