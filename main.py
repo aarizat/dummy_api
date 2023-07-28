@@ -1,4 +1,4 @@
-from flask import Flask, make_response, render_template_string
+from flask import Flask, make_response, render_template_string, jsonify
 import csv
 import io
 
@@ -10,14 +10,17 @@ app = Flask(__name__)
 def home():
     return render_template_string("""
         <html>
-            <body style="display: flex; justify-content: center; align-items: center; height: 100vh;">
-                <h1>Welcome to Dummy API :)!</h1>
+            <body style="display: flex; justify-content: center; align-items: center; height: 100vh; flex-direction: column;">
+                <h1>😂 Welcome! Lost in the Internet? You're in the right place! 😂</h1>
+                <footer style="position: fixed; bottom: 0; width: 100%; text-align: center; padding: 20px;">
+                    <p>By Andres Ariza ❤️</p>
+                </footer>
             </body>
         </html>
     """)
 
 
-@app.route('/dummy_data', methods=['GET'])
+@app.route('/csvdata', methods=['GET'])
 def get_data():
     si = io.StringIO()
     cw = csv.writer(si)
@@ -34,6 +37,17 @@ def get_data():
     output.headers["Content-Disposition"] = "attachment; filename=users.csv"
     output.headers["Content-type"] = "text/csv"
     return output
+
+
+@app.route('/jsondata', methods=['GET'])
+def get_json_data():
+    data = [
+        {"name": "Joe", "age": 34, "profession": "engineer"},
+        {"name": "Mack", "age": 45, "profession": "Teacher"},
+        {"name": "Jose", "age": 100, "profession": "Retired"},
+        {"name": "Marlon", "age": 45, "profession": "Astronaut"},
+    ]
+    return jsonify(data)
 
 
 if __name__ == '__main__':
