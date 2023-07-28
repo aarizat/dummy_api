@@ -1,9 +1,21 @@
-from flask import Flask, make_response
+from flask import Flask, make_response, render_template_string
 import csv
 import io
 
 
 app = Flask(__name__)
+
+
+@app.route('/', methods=['GET'])
+def home():
+    return render_template_string("""
+        <html>
+            <body style="display: flex; justify-content: center; align-items: center; height: 100vh;">
+                <h1>Welcome to Dummy API :)!</h1>
+            </body>
+        </html>
+    """)
+
 
 @app.route('/dummy_data', methods=['GET'])
 def get_data():
