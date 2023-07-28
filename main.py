@@ -11,10 +11,10 @@ def home():
     return render_template_string("""
         <html>
             <body style="display: flex; justify-content: center; align-items: center; height: 100vh; flex-direction: column;">
-                <h1>\U0001F602 Welcome! \U0001F602</h1>
+                <h1>&#x1F602; Welcome! &#x1F602;</h1>
                 <p style="font-size: 1.5em;">Lost in the Internet? You're in the right place!</p>
                 <footer style="position: fixed; bottom: 0; width: 100%; text-align: center; padding: 20px;">
-                    <p>By Andres Ariza \U00002764</p>
+                    <p>By Andres Ariza &#x2764;</p>
                 </footer>
             </body>
         </html>
