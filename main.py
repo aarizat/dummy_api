@@ -32,6 +32,7 @@ def get_csv_with_metadata():
     cw.writerow([])
     cw.writerow(['Created date: 2023-07-27'])
     cw.writerow([])
+    cw.writerow([])
     cw.writerow(['name', 'age', 'profession'])
     cw.writerow(['Joe', '34', 'engineer'])
     cw.writerow(['Mack', '45', 'Teacher'])
