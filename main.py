@@ -24,8 +24,8 @@ def home():
     """)
 
 
-@app.route('/csvdata', methods=['GET'])
-def get_data():
+@app.route('/csv-with-metadata', methods=['GET'])
+def get_csv_with_metadata():
     si = io.StringIO()
     cw = csv.writer(si)
     cw.writerow(['List of users'])
@@ -43,7 +43,22 @@ def get_data():
     return output
 
 
-@app.route('/jsondata', methods=['GET'])
+@app.route('/csv-with-metadata', methods=['GET'])
+def get_csv_data():
+    si = io.StringIO()
+    cw = csv.writer(si)
+    cw.writerow(['name', 'age', 'profession'])
+    cw.writerow(['Joe', '34', 'engineer'])
+    cw.writerow(['Mack', '45', 'Teacher'])
+    cw.writerow(['Jose', '100', 'Retired'])
+    cw.writerow(['Marlon', '45', 'Astronaut'])
+    output = make_response(si.getvalue())
+    output.headers["Content-Disposition"] = "attachment; filename=users.csv"
+    output.headers["Content-type"] = "text/csv"
+    return output
+
+
+@app.route('/json', methods=['GET'])
 def get_json_data():
     data = [
         {"name": "Joe", "age": 34, "profession": "engineer"},
