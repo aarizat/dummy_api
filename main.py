@@ -43,7 +43,7 @@ def get_csv_with_metadata():
     return output
 
 
-@app.route('/csv-with-metadata', methods=['GET'])
+@app.route('/csv', methods=['GET'])
 def get_csv_data():
     si = io.StringIO()
     cw = csv.writer(si)
