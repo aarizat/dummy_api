@@ -29,6 +29,7 @@ def get_csv_with_metadata():
     si = io.StringIO()
     cw = csv.writer(si)
     cw.writerow(['List of users'])
+    cw.writerow([])
     cw.writerow(['Created date: 2023-07-27'])
     cw.writerow([])
     cw.writerow(['name', 'age', 'profession'])
